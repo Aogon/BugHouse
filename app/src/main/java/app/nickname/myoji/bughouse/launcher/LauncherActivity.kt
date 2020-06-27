@@ -17,24 +17,24 @@ class LauncherActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        saveActivityCell.setOnClickListener {
-            val intent = Intent(this, SaveActivity::class.java)
-            startActivity(intent)
-        }
-
-        loadActivityCell.setOnClickListener {
-            val intent = Intent(this, LoadActivity::class.java)
-            startActivity(intent)
-        }
-
-        imageViewActivityCell.setOnClickListener {
-            val intent = Intent(this, ImageViewActivity::class.java)
-            startActivity(intent)
-        }
-
-        listActivityCell.setOnClickListener {
-            val intent = Intent(this, ListActivity::class.java)
-            startActivity(intent)
-        }
+//        saveActivityCell.setOnClickListener {
+//            val intent = Intent(this, SaveActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        loadActivityCell.setOnClickListener {
+//            val intent = Intent(this, LoadActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        imageViewActivityCell.setOnClickListener {
+//            val intent = Intent(this, ImageViewActivity::class.java)
+//            startActivity(intent)
+//        }
+//
+//        listActivityCell.setOnClickListener {
+//            val intent = Intent(this, ListActivity::class.java)
+//            startActivity(intent)
+//        }
     }
 }

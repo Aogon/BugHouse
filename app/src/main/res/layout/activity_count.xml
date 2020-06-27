@@ -11,14 +11,16 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="0"
-        android:textSize="1000sp"
-        app:layout_constraintBottom_toTopOf="@id/botton"
+        android:textSize="100sp"
+        app:layout_constraintBottom_toTopOf="@id/button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <!-- textSizeの桁が違う！ -->
+
     <Button
-        android:id="@+id/botton"
+        android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="PLUS"
@@ -26,5 +28,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <!--buttonのスペルミス-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>
