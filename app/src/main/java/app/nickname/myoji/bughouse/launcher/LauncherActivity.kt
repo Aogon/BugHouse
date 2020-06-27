@@ -26,11 +26,11 @@ class LauncherActivity : AppCompatActivity() {
             val intent = Intent(this, LoadActivity::class.java)
             startActivity(intent)
         }
-//
-//        imageViewActivityCell.setOnClickListener {
-//            val intent = Intent(this, ImageViewActivity::class.java)
-//            startActivity(intent)
-//        }
+
+        imageViewActivityCell.setOnClickListener {
+            val intent = Intent(this, ImageViewActivity::class.java)
+            startActivity(intent)
+        }
 //
 //        listActivityCell.setOnClickListener {
 //            val intent = Intent(this, ListActivity::class.java)
