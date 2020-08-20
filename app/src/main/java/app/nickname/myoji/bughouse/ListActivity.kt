@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import kotlinx.android.synthetic.main.activity_list.*
 
 class ListActivity : AppCompatActivity() {
-    private val taskList = mutableListOf( //書き込み可能はmutableList
+    private val taskList = mutableListOf( //書き込み可能はmutableList, taskListはAdapterに渡すまでの「臨時の」置き場
         Task("Task 1"),
         Task("Task 2"),
         Task("Task 3")
@@ -29,11 +29,13 @@ class ListActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter //RecyclerViewにadapterがついていなかった
         adapter.addAll(taskList)
+        taskList.clear() //addAllしたらtaskListの全要素を消去
 
         addButton.setOnClickListener {
             val name = editText.text.toString()
             taskList.add(Task(name))
             adapter.addAll(taskList)
+            taskList.clear() //addAllしたらtaskListの全要素を消去
         }
     }
 
