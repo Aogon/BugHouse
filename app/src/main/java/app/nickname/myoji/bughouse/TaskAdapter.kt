@@ -28,11 +28,16 @@ class TaskAdapter(
             itemClickListener.onItemClick(position)
         }
         holder.nameTextView.text = item.name
+    }
 
+
+    fun init(items: List<Task>) {
+        this.items.addAll(items)
+        notifyDataSetChanged()
     }
 
     fun addAll(items: List<Task>) {
-        this.items.addAll(items)
+        this.items.add(items[items.lastIndex])
         notifyDataSetChanged()
     }
 

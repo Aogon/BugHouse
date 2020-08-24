@@ -21,21 +21,21 @@ class ListActivity : AppCompatActivity() {
         val adapter = TaskAdapter(this, object: TaskAdapter.ItemClickListener{
             override fun onItemClick(position: Int) {
                 val intent = Intent(this@ListActivity, DetailActivity::class.java)
-                intent.putExtra("TASK_NAME", taskList[position].name)
+                intent.putExtra("TODO_NAME", taskList[position].name) //intentのkeyの名前が違う
                 startActivity(intent)
             }
         })
 
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = adapter //RecyclerViewにadapterがついていなかった
-        adapter.addAll(taskList)
-        taskList.clear() //addAllしたらtaskListの全要素を消去
+        adapter.init(taskList) //initとaddAllを分けた（これでいいのか？）
+//        taskList.clear() //addAllしたらtaskListの全要素を消去
 
         addButton.setOnClickListener {
             val name = editText.text.toString()
             taskList.add(Task(name))
             adapter.addAll(taskList)
-            taskList.clear() //addAllしたらtaskListの全要素を消去
+//            taskList.clear() //addAllしたらtaskListの全要素を消去
         }
     }
 
