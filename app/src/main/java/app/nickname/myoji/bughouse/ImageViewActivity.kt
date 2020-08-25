@@ -14,21 +14,21 @@ class ImageViewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState, persistentState)
         setContentView(R.layout.activity_image_view)
 
-        imageView.load("https://life-is-tech.com/materials/images/summer2019_desktop_3.jpg") //Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6.らしい。JVM targetを指定してあげる必要。
+//        imageView.load("https://life-is-tech.com/materials/images/summer2019_desktop_3.jpg") //Cannot inline bytecode built with JVM target 1.8 into bytecode that is being built with JVM target 1.6.らしい。JVM targetを指定してあげる必要。
 
-//        getImageButton.setOnClickListener {
-//            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
-//            intent.type = "image/*"
-//            startActivityForResult(intent, 100)
-//        }
+        getImageButton.setOnClickListener {
+            val intent = Intent(Intent.ACTION_OPEN_DOCUMENT)
+            intent.type = "image/*"
+            startActivityForResult(intent, 100)
+        }
 
     }
 
-//    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-//        super.onActivityResult(requestCode, resultCode, data)
-//
-//        if (requestCode == 1 && resultCode == Activity.RESULT_CANCELED) {
-//            imageView.load(data?.data)
-//        }
-//    }
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+
+        if (requestCode == 1 && resultCode == Activity.RESULT_CANCELED) {
+            imageView.load(data?.data)
+        }
+    }
 }
